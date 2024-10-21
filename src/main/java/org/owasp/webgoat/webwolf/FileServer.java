@@ -76,7 +76,7 @@ public class FileServer {
     var destinationDir = new File(fileLocation, user.getUsername());
     destinationDir.mkdirs();
     myFile.transferTo(new File(destinationDir, myFile.getOriginalFilename()));
-    log.debug("File saved to {}", new File(destinationDir, myFile.getOriginalFilename()));
+    log.debug("File saved to {}", new File(destinationDir, pathInsecure));
 
     return new ModelAndView(
         new RedirectView("files", true),
